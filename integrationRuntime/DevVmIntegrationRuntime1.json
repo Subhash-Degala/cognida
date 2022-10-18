@@ -1,0 +1,7 @@
+{
+	"name": "DevVmIntegrationRuntime1",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "DevVmIntegrationRuntime "
+	}
+}
