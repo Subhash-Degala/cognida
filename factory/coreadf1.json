@@ -1,0 +1,9 @@
+{
+	"name": "coreadf1",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d3788a19-398d-49e7-bf5b-d41ef5860d30",
+		"tenantId": "2bfb7fec-6b57-4645-8753-6f75344375b1"
+	}
+}
