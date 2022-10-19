@@ -5,13 +5,13 @@
 		"factoryName": {
 			"value": "coreadf1"
 		},
+		"Blobstoage_linkservice_connectionString": {
+			"value": ""
+		},
 		"GitHub1_credential": {
 			"value": ""
 		},
 		"OnPremSQLServer_LinkedService_connectionString": {
-			"value": ""
-		},
-		"Blobstoage_linkservice_connectionString": {
 			"value": ""
 		},
 		"GitHub1_properties_typeProperties_username": {

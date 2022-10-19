@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "coreadf1"
 		},
+		"Blobstoage_linkservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Blobstoage_linkservice'"
+		},
 		"GitHub1_credential": {
 			"type": "secureString",
 			"metadata": "Secure string for 'credential' of 'GitHub1'"
@@ -14,10 +18,6 @@
 		"OnPremSQLServer_LinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'OnPremSQLServer_LinkedService'"
-		},
-		"Blobstoage_linkservice_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Blobstoage_linkservice'"
 		},
 		"GitHub1_properties_typeProperties_username": {
 			"type": "string",
@@ -28,46 +28,6 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/GitHub1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "GitHub",
-				"typeProperties": {
-					"username": "[parameters('GitHub1_properties_typeProperties_username')]",
-					"credential": {
-						"type": "SecureString",
-						"value": "[parameters('GitHub1_credential')]"
-					},
-					"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEE1ODJENzIzLTNCOUMtNDFBRS1BM0RBLUNFMjkyRDVENjk4Nl8wYTVlOTAwMi01ZjFjLTQxYWMtYjJkYS1jNjdlMjliMGM4NmYiDQp9"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DevVmIntegrationRuntime')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"description": "DevVmIntegrationRuntime",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DevVmIntegrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"description": "DevVmIntegrationRuntime ",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/onprem-sql-pipe')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -142,23 +102,32 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/OnPremSQLServer_LinkedService')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"description": "OnPremSQLServer_LinkedService",
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('OnPremSQLServer_LinkedService_connectionString')]"
+				"linkedServiceName": {
+					"referenceName": "Blobstoage_linkservice",
+					"type": "LinkedServiceReference"
 				},
-				"connectVia": {
-					"referenceName": "DevVmIntegrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "order.csv",
+						"folderPath": "output",
+						"container": "core-container"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/DevVmIntegrationRuntime')]"
+				"[concat(variables('factoryId'), '/linkedServices/Blobstoage_linkservice')]"
 			]
 		},
 		{
@@ -196,7 +165,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "orders"
+					"table": "XrefTable"
 				}
 			},
 			"dependsOn": [
@@ -223,33 +192,64 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/GitHub1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Blobstoage_linkservice",
-					"type": "LinkedServiceReference"
-				},
 				"annotations": [],
-				"type": "DelimitedText",
+				"type": "GitHub",
 				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "order.csv",
-						"folderPath": "output",
-						"container": "core-container"
+					"username": "[parameters('GitHub1_properties_typeProperties_username')]",
+					"credential": {
+						"type": "SecureString",
+						"value": "[parameters('GitHub1_credential')]"
 					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
+					"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEE1ODJENzIzLTNCOUMtNDFBRS1BM0RBLUNFMjkyRDVENjk4Nl8wYTVlOTAwMi01ZjFjLTQxYWMtYjJkYS1jNjdlMjliMGM4NmYiDQp9"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OnPremSQLServer_LinkedService')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "OnPremSQLServer_LinkedService",
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('OnPremSQLServer_LinkedService_connectionString')]"
 				},
-				"schema": []
+				"connectVia": {
+					"referenceName": "DevVmIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Blobstoage_linkservice')]"
+				"[concat(variables('factoryId'), '/integrationRuntimes/DevVmIntegrationRuntime')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DevVmIntegrationRuntime')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "DevVmIntegrationRuntime",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DevVmIntegrationRuntime1')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "DevVmIntegrationRuntime ",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		}
 	]
 }

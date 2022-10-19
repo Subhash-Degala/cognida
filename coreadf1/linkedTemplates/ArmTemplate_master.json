@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "coreadf1"
 		},
+		"Blobstoage_linkservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Blobstoage_linkservice'"
+		},
 		"GitHub1_credential": {
 			"type": "secureString",
 			"metadata": "Secure string for 'credential' of 'GitHub1'"
@@ -14,10 +18,6 @@
 		"OnPremSQLServer_LinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'OnPremSQLServer_LinkedService'"
-		},
-		"Blobstoage_linkservice_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Blobstoage_linkservice'"
 		},
 		"GitHub1_properties_typeProperties_username": {
 			"type": "string",
@@ -53,11 +53,11 @@
 					"GitHub1_credential": {
 						"value": "[parameters('GitHub1_credential')]"
 					},
-					"OnPremSQLServer_LinkedService_connectionString": {
-						"value": "[parameters('OnPremSQLServer_LinkedService_connectionString')]"
-					},
 					"Blobstoage_linkservice_connectionString": {
 						"value": "[parameters('Blobstoage_linkservice_connectionString')]"
+					},
+					"OnPremSQLServer_LinkedService_connectionString": {
+						"value": "[parameters('OnPremSQLServer_LinkedService_connectionString')]"
 					},
 					"GitHub1_properties_typeProperties_username": {
 						"value": "[parameters('GitHub1_properties_typeProperties_username')]"
