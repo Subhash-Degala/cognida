@@ -1,0 +1,6 @@
+{
+	"name": "DevVmIntegrationRuntimecore",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
