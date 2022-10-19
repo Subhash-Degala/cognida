@@ -179,14 +179,103 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/onprem-sql-pipe')]",
+			"name": "[concat(parameters('factoryName'), '/OnPremSQLServer_LinkedService')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OnPremSQLServer_LinkedService",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "ChildAID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ChildATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ParentAID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ParentATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ParentOrder",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StartDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EndDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "XID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RowCreatedDate",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "XrefTable"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OnPremSQLServer_LinkedService')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Xref_Blob_LinkStorage')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Blobstoage_linkservice",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "xref",
+						"folderPath": "output",
+						"container": "coreissue"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Blobstoage_linkservice')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OnPremSQLEmpToBlob_Pipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"description": "OnPremSQLEmpToBlob_Pipeline",
 				"activities": [
 					{
 						"name": "SQLEmpToBlobEmp_Activity",
-						"description": "SQLEmpToBlobEmp_Activity",
+						"description": "SQLEmpToBlobEmp Activity",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -226,14 +315,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "OnPremSQLServerEmp",
+								"referenceName": "OnPremSQLServer_LinkedService",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DelimitedText1",
+								"referenceName": "Xref_Blob_LinkStorage",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -247,8 +336,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/OnPremSQLServerEmp')]",
-				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
+				"[concat(variables('factoryId'), '/datasets/OnPremSQLServer_LinkedService')]",
+				"[concat(variables('factoryId'), '/datasets/Xref_Blob_LinkStorage')]"
 			]
 		}
 	]
