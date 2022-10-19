@@ -115,7 +115,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "order.csv",
+						"fileName": "xref.csv",
 						"folderPath": "output",
 						"container": "core-container"
 					},
