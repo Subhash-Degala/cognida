@@ -14,6 +14,15 @@
 		"OnPremSQLServer_LinkedService_connectionString": {
 			"value": ""
 		},
+		"OnPremSQLServer_LinkedService_core_connectionString": {
+			"value": ""
+		},
+		"SqlServer_core_connectionString": {
+			"value": ""
+		},
+		"SqlServerlink_core_connectionString": {
+			"value": ""
+		},
 		"GitHub1_properties_typeProperties_username": {
 			"value": "subhash"
 		}

@@ -11,6 +11,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'credential' of 'GitHub1'"
 		},
+		"SqlServer_core_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer_core'"
+		},
+		"SqlServerlink_core_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServerlink_core'"
+		},
 		"Blobstoage_linkservice_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Blobstoage_linkservice'"
@@ -18,6 +26,10 @@
 		"OnPremSQLServer_LinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'OnPremSQLServer_LinkedService'"
+		},
+		"OnPremSQLServer_LinkedService_core_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'OnPremSQLServer_LinkedService_core'"
 		},
 		"GitHub1_properties_typeProperties_username": {
 			"type": "string",
@@ -47,6 +59,32 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/SqlServer_core')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('SqlServer_core_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SqlServerlink_core')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('SqlServerlink_core_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DevVmIntegrationRuntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -64,6 +102,16 @@
 			"properties": {
 				"type": "SelfHosted",
 				"description": "DevVmIntegrationRuntime ",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DevVmIntegrationRuntimecore')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
 				"typeProperties": {}
 			},
 			"dependsOn": []
@@ -97,6 +145,26 @@
 				"type": "SqlServer",
 				"typeProperties": {
 					"connectionString": "[parameters('OnPremSQLServer_LinkedService_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "DevVmIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/DevVmIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OnPremSQLServer_LinkedService_core')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "OnPremSQLServer_LinkedService",
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('OnPremSQLServer_LinkedService_core_connectionString')]"
 				},
 				"connectVia": {
 					"referenceName": "DevVmIntegrationRuntime",
@@ -272,11 +340,9 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"description": "OnPremSQLEmpToBlob_Pipeline",
 				"activities": [
 					{
-						"name": "SQLEmpToBlobEmp_Activity",
-						"description": "SQLEmpToBlobEmp Activity",
+						"name": "Pipeline_core",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {

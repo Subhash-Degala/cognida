@@ -19,6 +19,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'OnPremSQLServer_LinkedService'"
 		},
+		"OnPremSQLServer_LinkedService_core_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'OnPremSQLServer_LinkedService_core'"
+		},
+		"SqlServer_core_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer_core'"
+		},
+		"SqlServerlink_core_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServerlink_core'"
+		},
 		"GitHub1_properties_typeProperties_username": {
 			"type": "string",
 			"defaultValue": "subhash"
@@ -53,11 +65,20 @@
 					"GitHub1_credential": {
 						"value": "[parameters('GitHub1_credential')]"
 					},
+					"SqlServer_core_connectionString": {
+						"value": "[parameters('SqlServer_core_connectionString')]"
+					},
+					"SqlServerlink_core_connectionString": {
+						"value": "[parameters('SqlServerlink_core_connectionString')]"
+					},
 					"Blobstoage_linkservice_connectionString": {
 						"value": "[parameters('Blobstoage_linkservice_connectionString')]"
 					},
 					"OnPremSQLServer_LinkedService_connectionString": {
 						"value": "[parameters('OnPremSQLServer_LinkedService_connectionString')]"
+					},
+					"OnPremSQLServer_LinkedService_core_connectionString": {
+						"value": "[parameters('OnPremSQLServer_LinkedService_core_connectionString')]"
 					},
 					"GitHub1_properties_typeProperties_username": {
 						"value": "[parameters('GitHub1_properties_typeProperties_username')]"
