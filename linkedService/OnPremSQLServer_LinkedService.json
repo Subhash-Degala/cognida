@@ -1,0 +1,17 @@
+{
+	"name": "OnPremSQLServer_LinkedService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "OnPremSQLServer_LinkedService",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=MP26H1V4;initial catalog=core;user id=adfuser",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4MTU3YTA5MC01Y2M4LTQ1OTMtODUxZi1jZWM2OTM4NGU0OTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "DevVmIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
