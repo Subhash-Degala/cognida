@@ -1,0 +1,55 @@
+{
+	"name": "OnPremSQLServer_LinkedService",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OnPremSQLServer_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ChildAID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ChildATID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ParentAID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ParentATID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ParentOrder",
+				"type": "nvarchar"
+			},
+			{
+				"name": "StartDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EndDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "XID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RowCreatedDate",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "XrefTable"
+		}
+	}
+}
