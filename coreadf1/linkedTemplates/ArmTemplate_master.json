@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "coreadf1"
+		},
+		"GitHub1_credential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'credential' of 'GitHub1'"
+		},
+		"OnPremSQLServer_LinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'OnPremSQLServer_LinkedService'"
+		},
+		"Blobstoage_linkservice_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Blobstoage_linkservice'"
+		},
+		"GitHub1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "subhash"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "coreadf1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"GitHub1_credential": {
+						"value": "[parameters('GitHub1_credential')]"
+					},
+					"OnPremSQLServer_LinkedService_connectionString": {
+						"value": "[parameters('OnPremSQLServer_LinkedService_connectionString')]"
+					},
+					"Blobstoage_linkservice_connectionString": {
+						"value": "[parameters('Blobstoage_linkservice_connectionString')]"
+					},
+					"GitHub1_properties_typeProperties_username": {
+						"value": "[parameters('GitHub1_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
