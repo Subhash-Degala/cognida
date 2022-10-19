@@ -1,0 +1,6 @@
+{
+	"name": "OnPremSQLEmpToBlob_Pipeline",
+	"properties": {
+		"annotations": []
+	}
+}
