@@ -9,7 +9,10 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation"
+				"type": "AzureBlobStorageLocation",
+				"fileName": "xref",
+				"folderPath": "output",
+				"container": "coreissue"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
