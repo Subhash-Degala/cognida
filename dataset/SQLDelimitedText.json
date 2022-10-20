@@ -1,0 +1,24 @@
+{
+	"name": "SQLDelimitedText",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blobstoage_linkservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "CCard_Primary",
+				"folderPath": "Direct",
+				"container": "Container1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
