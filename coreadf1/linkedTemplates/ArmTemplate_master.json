@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "coreadf1"
 		},
+		"AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase'"
+		},
 		"Blobstoage_linkservice_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Blobstoage_linkservice'"
@@ -61,6 +65,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase_connectionString": {
+						"value": "[parameters('AzureSqlDatabase_connectionString')]"
 					},
 					"GitHub1_credential": {
 						"value": "[parameters('GitHub1_credential')]"

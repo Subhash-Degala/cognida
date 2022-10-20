@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "coreadf1"
 		},
+		"AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase'"
+		},
 		"GitHub1_credential": {
 			"type": "secureString",
 			"metadata": "Secure string for 'credential' of 'GitHub1'"
@@ -40,6 +44,19 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/GitHub1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -108,6 +125,16 @@
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DevVmIntegrationRuntimecore')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -336,13 +363,156 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/OnPremSQLEmpToBlob_Pipeline')]",
+			"name": "[concat(parameters('factoryName'), '/SqlServerTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OnPremSQLServer_LinkedService_core",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "CCardLookUp"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OnPremSQLServer_LinkedService_core')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SQLDelimitedText')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Blobstoage_linkservice",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "CCard_Primary",
+						"folderPath": "Direct",
+						"container": "contain"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "TABLE_CATALOG",
+						"type": "String"
+					},
+					{
+						"name": "TABLE_SCHEMA",
+						"type": "String"
+					},
+					{
+						"name": "TABLE_NAME",
+						"type": "String"
+					},
+					{
+						"name": "COLUMN_NAME",
+						"type": "String"
+					},
+					{
+						"name": "ORDINAL_POSITION",
+						"type": "String"
+					},
+					{
+						"name": "COLUMN_DEFAULT",
+						"type": "String"
+					},
+					{
+						"name": "IS_NULLABLE",
+						"type": "String"
+					},
+					{
+						"name": "DATA_TYPE",
+						"type": "String"
+					},
+					{
+						"name": "CHARACTER_MAXIMUM_LENGTH",
+						"type": "String"
+					},
+					{
+						"name": "CHARACTER_OCTET_LENGTH",
+						"type": "String"
+					},
+					{
+						"name": "NUMERIC_PRECISION",
+						"type": "String"
+					},
+					{
+						"name": "NUMERIC_PRECISION_RADIX",
+						"type": "String"
+					},
+					{
+						"name": "NUMERIC_SCALE",
+						"type": "String"
+					},
+					{
+						"name": "DATETIME_PRECISION",
+						"type": "String"
+					},
+					{
+						"name": "CHARACTER_SET_CATALOG",
+						"type": "String"
+					},
+					{
+						"name": "CHARACTER_SET_SCHEMA",
+						"type": "String"
+					},
+					{
+						"name": "CHARACTER_SET_NAME",
+						"type": "String"
+					},
+					{
+						"name": "COLLATION_CATALOG",
+						"type": "String"
+					},
+					{
+						"name": "COLLATION_SCHEMA",
+						"type": "String"
+					},
+					{
+						"name": "COLLATION_NAME",
+						"type": "String"
+					},
+					{
+						"name": "DOMAIN_CATALOG",
+						"type": "String"
+					},
+					{
+						"name": "DOMAIN_SCHEMA",
+						"type": "String"
+					},
+					{
+						"name": "DOMAIN_NAME",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Blobstoage_linkservice')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OnpremisetoBLOB_PIPE')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Pipeline_core",
+						"name": "OnpremisetoBLOB1",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -382,14 +552,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "OnPremSQLServer_LinkedService",
+								"referenceName": "SqlServerTable1",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "Xref_Blob_LinkStorage",
+								"referenceName": "SQLDelimitedText",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -403,8 +573,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/OnPremSQLServer_LinkedService')]",
-				"[concat(variables('factoryId'), '/datasets/Xref_Blob_LinkStorage')]"
+				"[concat(variables('factoryId'), '/datasets/SqlServerTable1')]",
+				"[concat(variables('factoryId'), '/datasets/SQLDelimitedText')]"
 			]
 		}
 	]
