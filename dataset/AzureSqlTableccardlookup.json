@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTableccardlookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "coredb",
+			"table": "CCardLookUp"
+		}
+	}
+}
