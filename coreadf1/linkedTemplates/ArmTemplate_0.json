@@ -375,27 +375,85 @@
 				"type": "SqlServerTable",
 				"schema": [
 					{
-						"name": "LUTid",
+						"name": "GroupId",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TransactionCode",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "LogicModule",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "SortOrder",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "CardScheme",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "DrCrIndicator_MTC",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "AcqCommission",
 						"type": "nvarchar"
 					},
 					{
-						"name": "LutCode",
+						"name": "typeofcard",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "ActualTranCode",
 						"type": "nvarchar"
 					},
 					{
-						"name": "LutDescription",
+						"name": "LogicModuleType",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "Commission",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "Status",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "SendToLedger",
+						"type": "bit"
+					},
+					{
+						"name": "DebitAccount",
 						"type": "nvarchar"
 					},
 					{
-						"name": "LutLanguage",
+						"name": "CreditAccount",
 						"type": "nvarchar"
 					},
 					{
-						"name": "DisplayOrdr",
+						"name": "LossAccount",
 						"type": "nvarchar"
 					},
 					{
-						"name": "Module",
+						"name": "ProfitAccount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TransactionDescription",
 						"type": "nvarchar"
 					},
 					{
@@ -411,13 +469,113 @@
 						"type": "nvarchar"
 					},
 					{
-						"name": "InstitutionId",
+						"name": "BackdatedMethod",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BackdatedDays",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FuturedatedMethod",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FuturedatedDays",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AutoAdjustmentTxnCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ManualAdjustmentTxnCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReassessmentTranCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "InCycleCreditTC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "InCycleReassessTC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcrossCycleCreditTC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcrossCycleReassessTC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ChargeOffReason",
+						"type": "nvarchar"
+					},
+					{
+						"name": "IsACHPush",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiniTxnFor",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PlanType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AlertDelayMinutes",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TxnForExpose",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MergeAdjustmentTranCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MergeRepostTrancode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MergeTrancode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PaymentHoldRIPcheck",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PostMergeAdjustmentTranCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PostMergeRepostTrancode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PostMergeTrancode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BackupPolicyRIPcheck",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PaymentHoldCheckPayment",
 						"type": "nvarchar"
 					}
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "CCard_Primary"
+					"table": "MonetaryTxnControl"
 				}
 			},
 			"dependsOn": [
@@ -438,7 +596,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "CCard_Primary",
+						"fileName": "MonetaryTxnControl",
 						"folderPath": "Direct",
 						"container": "contain"
 					},
