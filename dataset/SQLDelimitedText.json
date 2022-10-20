@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "CCard_secondary",
+				"fileName": "CCardLookUp",
 				"folderPath": "Direct",
 				"container": "contain"
 			},
