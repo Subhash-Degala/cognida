@@ -447,207 +447,476 @@
 				"type": "SqlServerTable",
 				"schema": [
 					{
-						"name": "GroupId",
+						"name": "acctId",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "AmountOfDebitsDM1",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "NumberOfDebitsDM1",
 						"type": "tinyint",
 						"precision": 3
 					},
 					{
-						"name": "TransactionCode",
-						"type": "smallint",
-						"precision": 5
+						"name": "AmountOfCreditsDM1",
+						"type": "float",
+						"precision": 15
 					},
 					{
-						"name": "LogicModule",
-						"type": "smallint",
-						"precision": 5
-					},
-					{
-						"name": "SortOrder",
-						"type": "smallint",
-						"precision": 5
-					},
-					{
-						"name": "CardScheme",
+						"name": "NumberOfCreditsDM1",
 						"type": "tinyint",
 						"precision": 3
 					},
 					{
-						"name": "DrCrIndicator_MTC",
+						"name": "AmtGenDebitsDD1",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "AmtGenCreditsDD1",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "NbrGenDebitsDD1",
 						"type": "smallint",
 						"precision": 5
 					},
 					{
-						"name": "AcqCommission",
+						"name": "NbrGenCreditsDD1",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TotAmtCashPurAuthReqDD1",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TotAmtCashPurAuthReqDD2",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TotAmtCashPurAuthReqDD3",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TotNoCashPurAuthReqDD1",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TotNoCashPurAuthReqDD2",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TotNoCashPurAuthReqDD3",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "PeriodPrefix",
 						"type": "nvarchar"
 					},
 					{
-						"name": "typeofcard",
+						"name": "ARSystemAcctId",
 						"type": "tinyint",
 						"precision": 3
 					},
 					{
-						"name": "ActualTranCode",
+						"name": "TimeZone",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "DayLightSaving",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "ProcessingDayEndTime",
 						"type": "nvarchar"
 					},
 					{
-						"name": "LogicModuleType",
+						"name": "CBRPortfolioType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CBRAccountType",
 						"type": "tinyint",
 						"precision": 3
 					},
 					{
-						"name": "Commission",
+						"name": "PreferredLanguage",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CMTransactionHistoryUpto",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CMTransactionHistoryUpRange",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ACHCutoffTime",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "NoOfTxnInACHFile",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "SSRegistrationMethod",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SSForgetPasswordMethod",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SSForgetUserIDMethod",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SSDisputeAllowed",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent136AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent136ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent137AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent137ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent138AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent138ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent139AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent139ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent140AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent140ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent141AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent141ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent142AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent142ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent143AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent143ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent144AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent144ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent145AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent145ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent146AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent146ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent147AID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ccinhparent147ATID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BankVerificationMethod",
 						"type": "tinyint",
 						"precision": 3
 					},
 					{
-						"name": "Status",
+						"name": "CEDAlignment",
 						"type": "tinyint",
 						"precision": 3
 					},
 					{
-						"name": "SendToLedger",
+						"name": "CompanyEntryDescription",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CompanyID",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "CompanyName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CompanyNameAlignment",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "ECCAlignment",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "EntryClassCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CompanyIdAlignment",
 						"type": "bit"
 					},
 					{
-						"name": "DebitAccount",
+						"name": "DestinationAlignment",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "DestinationRTAlignment",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "OriginationAlignment",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "TINAlignment",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "DEKEncryptionRequired",
 						"type": "nvarchar"
 					},
 					{
-						"name": "CreditAccount",
+						"name": "DEKEncryptionKey",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "RefundDescription",
 						"type": "nvarchar"
 					},
 					{
-						"name": "LossAccount",
+						"name": "BillPayOriginatorsRFIID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "BillPayDestinationName",
 						"type": "nvarchar"
 					},
 					{
-						"name": "ProfitAccount",
+						"name": "HolidayConsideration",
 						"type": "nvarchar"
 					},
 					{
-						"name": "TransactionDescription",
+						"name": "AccountNumberGeneration",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "AccountNumberPrefix",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AccountNumberPostValue",
 						"type": "nvarchar"
 					},
 					{
-						"name": "tpyNAD",
+						"name": "WellsFargoBankABA",
 						"type": "nvarchar"
 					},
 					{
-						"name": "tpyLAD",
+						"name": "WellsFargoBankName",
 						"type": "nvarchar"
 					},
 					{
-						"name": "tpyBlob",
+						"name": "PreQual",
 						"type": "nvarchar"
 					},
 					{
-						"name": "BackdatedMethod",
+						"name": "ChargeAssmtFee",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "MerchantTaxIdentificationNumber",
 						"type": "nvarchar"
 					},
 					{
-						"name": "BackdatedDays",
+						"name": "CompanyNameCCD",
 						"type": "nvarchar"
 					},
 					{
-						"name": "FuturedatedMethod",
+						"name": "CompanyIdCCD",
 						"type": "nvarchar"
 					},
 					{
-						"name": "FuturedatedDays",
+						"name": "CompanyEntryDescCCDDebit",
 						"type": "nvarchar"
 					},
 					{
-						"name": "AutoAdjustmentTxnCode",
+						"name": "CompanyEntryDescCCDCredit",
 						"type": "nvarchar"
 					},
 					{
-						"name": "ManualAdjustmentTxnCode",
+						"name": "DestRoutingTransitRefund",
 						"type": "nvarchar"
 					},
 					{
-						"name": "ReassessmentTranCode",
+						"name": "ACHIdRefund",
 						"type": "nvarchar"
 					},
 					{
-						"name": "InCycleCreditTC",
+						"name": "OrigRoutingTransitRefund",
 						"type": "nvarchar"
 					},
 					{
-						"name": "InCycleReassessTC",
+						"name": "CompanyIdRefund",
 						"type": "nvarchar"
 					},
 					{
-						"name": "AcrossCycleCreditTC",
+						"name": "DestRoutingTransitReward",
 						"type": "nvarchar"
 					},
 					{
-						"name": "AcrossCycleReassessTC",
+						"name": "ACHIdReward",
 						"type": "nvarchar"
 					},
 					{
-						"name": "ChargeOffReason",
+						"name": "OrigRoutingTransitReward",
 						"type": "nvarchar"
 					},
 					{
-						"name": "IsACHPush",
+						"name": "CompanyIdReward",
 						"type": "nvarchar"
 					},
 					{
-						"name": "MiniTxnFor",
+						"name": "ACHFileContent",
 						"type": "nvarchar"
 					},
 					{
-						"name": "PlanType",
+						"name": "PODID",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "SysSubOrgID",
 						"type": "nvarchar"
 					},
 					{
-						"name": "AlertDelayMinutes",
+						"name": "StmtCTDCombination",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "StmtEODCombination",
 						"type": "nvarchar"
 					},
 					{
-						"name": "TxnForExpose",
+						"name": "ProgramIdSBFE",
 						"type": "nvarchar"
 					},
 					{
-						"name": "MergeAdjustmentTranCode",
+						"name": "BDCInDueDate",
 						"type": "nvarchar"
 					},
 					{
-						"name": "MergeRepostTrancode",
+						"name": "BDCInLateFeeDate",
 						"type": "nvarchar"
 					},
 					{
-						"name": "MergeTrancode",
+						"name": "MiniPodID",
 						"type": "nvarchar"
 					},
 					{
-						"name": "PaymentHoldRIPcheck",
+						"name": "BackdatedPymtConsideration",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "BackdatedPymtConsiderationTime",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "Sharding",
 						"type": "nvarchar"
 					},
 					{
-						"name": "PostMergeAdjustmentTranCode",
-						"type": "nvarchar"
-					},
-					{
-						"name": "PostMergeRepostTrancode",
-						"type": "nvarchar"
-					},
-					{
-						"name": "PostMergeTrancode",
-						"type": "nvarchar"
-					},
-					{
-						"name": "BackupPolicyRIPcheck",
-						"type": "nvarchar"
-					},
-					{
-						"name": "PaymentHoldCheckPayment",
+						"name": "MiniPODNumber",
 						"type": "nvarchar"
 					}
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "MonetaryTxnControl"
+					"table": "Org_Balances"
 				}
 			},
 			"dependsOn": [
@@ -668,7 +937,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "MonetaryTxnControl",
+						"fileName": "Org_Balances",
 						"folderPath": "Direct",
 						"container": "contain"
 					},
