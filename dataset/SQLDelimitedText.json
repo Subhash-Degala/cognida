@@ -19,6 +19,99 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "TABLE_CATALOG",
+				"type": "String"
+			},
+			{
+				"name": "TABLE_SCHEMA",
+				"type": "String"
+			},
+			{
+				"name": "TABLE_NAME",
+				"type": "String"
+			},
+			{
+				"name": "COLUMN_NAME",
+				"type": "String"
+			},
+			{
+				"name": "ORDINAL_POSITION",
+				"type": "String"
+			},
+			{
+				"name": "COLUMN_DEFAULT",
+				"type": "String"
+			},
+			{
+				"name": "IS_NULLABLE",
+				"type": "String"
+			},
+			{
+				"name": "DATA_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "CHARACTER_MAXIMUM_LENGTH",
+				"type": "String"
+			},
+			{
+				"name": "CHARACTER_OCTET_LENGTH",
+				"type": "String"
+			},
+			{
+				"name": "NUMERIC_PRECISION",
+				"type": "String"
+			},
+			{
+				"name": "NUMERIC_PRECISION_RADIX",
+				"type": "String"
+			},
+			{
+				"name": "NUMERIC_SCALE",
+				"type": "String"
+			},
+			{
+				"name": "DATETIME_PRECISION",
+				"type": "String"
+			},
+			{
+				"name": "CHARACTER_SET_CATALOG",
+				"type": "String"
+			},
+			{
+				"name": "CHARACTER_SET_SCHEMA",
+				"type": "String"
+			},
+			{
+				"name": "CHARACTER_SET_NAME",
+				"type": "String"
+			},
+			{
+				"name": "COLLATION_CATALOG",
+				"type": "String"
+			},
+			{
+				"name": "COLLATION_SCHEMA",
+				"type": "String"
+			},
+			{
+				"name": "COLLATION_NAME",
+				"type": "String"
+			},
+			{
+				"name": "DOMAIN_CATALOG",
+				"type": "String"
+			},
+			{
+				"name": "DOMAIN_SCHEMA",
+				"type": "String"
+			},
+			{
+				"name": "DOMAIN_NAME",
+				"type": "String"
+			}
+		]
 	}
 }
