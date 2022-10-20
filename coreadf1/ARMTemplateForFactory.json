@@ -489,7 +489,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "CCardLookUp"
+					"table": "IPMMaster"
 				}
 			},
 			"dependsOn": [
@@ -510,7 +510,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "CCardLookUp",
+						"fileName": "IPMMaster",
 						"folderPath": "Direct",
 						"container": "contain"
 					},
