@@ -445,10 +445,1372 @@
 				},
 				"annotations": [],
 				"type": "SqlServerTable",
-				"schema": [],
+				"schema": [
+					{
+						"name": "TranId",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "ProcCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ProcCodeFromAccType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ProcCodeToAccType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ConversionRateSettlement",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ConvRateCardholderBilling",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DateLocalTransaction",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TimeLocalTransaction",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EffectiveDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ExpirationDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettlementDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcquiringInstCountryCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PrimaryAccNumberCntryCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardDataEntryMode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PINEntryCapability",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Filler",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardSequenceNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PointOfServiceConditionCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSPINCaptureCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TransactionFeeAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReconciliationDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReconciliationIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OriginalAmount",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "AcquirerReferenceData",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcquiringInsitutionIDCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ForwardingInsitutionIDCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PANExtended",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ApprovalCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ResponseCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ServiceRestrictionCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardAcceptorNameLocation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AdditionalResponseData",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FeesAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettlementCurrencyCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ICCSysRelatedData",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OriginalMessageType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OriginalSystemTraceAuditNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OriginalTransmissionDateTime",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OriginalAcquiringID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OriginalForwardingID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSCardDataInputMode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSCardmemberAuth",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSCardmemberAuthEntity",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSCardDataOutputCapability",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSTerminalOutputCapability",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TerminalType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SharingGroupCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DecimalPositionsIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AdditionalDataIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ValidationCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Duration",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PostalCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MAC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettlementCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReceivingInstCountryCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "NetwrkMgmtInfoCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MessageNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CreditsAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CreditsReversalAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DebitsAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DebitsReversalAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FileUpdateCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ServiceIdentifier",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReplacementAmtsTransac",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReplacementAmtsSettlement",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReplaceAmtsCardHldBilling",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MessageSecurityCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReceivingInstIDCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FileName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AccountId2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettlementServiceData",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RecordData",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FreeFormTextJapan",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CustomerName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardhldCertificateSerialNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MerchantCertificateSerialNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TransactionID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TransStain",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TerminalVerificationResults",
+						"type": "nvarchar"
+					},
+					{
+						"name": "UnpredictableNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardVerificationResults",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Cryptogram",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AppTransactionCounter",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BankNetReferenceNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TheFinancialNetworkCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TransactionCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MerchantName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcquirerRefNumDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FilmLocator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "UsageCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettlementFlag",
+						"type": "nvarchar"
+					},
+					{
+						"name": "NetSalesAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SalesDraftReferenceNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AuthorizationResponseCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CRSReturnFlag",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PassengerName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DepartureDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TravelAgencyName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CarrierCode_Leg1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DestCityorAirportCode_Leg1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DestCityorAirportCode_Leg2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TotalFareAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ValetParkingCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TelephoneCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "GiftShopPurchase",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MovieCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BusinessCenterCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HealthClubCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OtherCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TotalNonRoomCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "WeeklyRentalRate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FuelCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OnewayDropoffCharges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CorporateID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Quantity",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "UnitofCost",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "OdometerReading",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ProductCode1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StateSalesTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StateSalesTaxAmount",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "CountySalesTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CountySalesTaxAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CitySalesTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CitySalesTaxAmount",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "LocalSalesTaxAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiscSalesTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiscSalesTaxAmount",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "FedExciseTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FedExciseTaxFuelAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StateFuelTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StateFuelTaxAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CountyFuelTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CountyFuelTaxAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CityFuelTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CityFuelTaxAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Misc1ExciseTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Misc2ExciseTaxExemptStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Misc2ExciseTaxAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FreightShippingAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DutyAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DestinationPostalZipCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "VATTAXAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardProgram",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EntryReason",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PINLength",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PurgeDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MemberMessageText",
+						"type": "nvarchar"
+					},
+					{
+						"name": "postind",
+						"type": "nvarchar"
+					},
+					{
+						"name": "description",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcquirerWsBin",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcquirerRefNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "cardholdername",
+						"type": "nvarchar"
+					},
+					{
+						"name": "addrlineone",
+						"type": "nvarchar"
+					},
+					{
+						"name": "addrlinetwo",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PreparedBy",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSInputCap",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSCardHolderAuthCap",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSTermOpEnv",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AmountOrgTran",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LifeCycleSupportIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LifeCycleTxnSequenceNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LifeCycleTxnTotal",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MemberToMemberPropData",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ICCREffectiveDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FeeTypeCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FeeProcessingCode",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "CurrencyCodeOriginalTxnAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TCC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EncrPINBlockKey",
+						"type": "nvarchar"
+					},
+					{
+						"name": "KeyClassIDTK",
+						"type": "nvarchar"
+					},
+					{
+						"name": "KeyIndexNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "KeyCycleNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ECMCardholderCNos",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ECCQInfo",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ECSLIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AVReqOptCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AVResponse",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CVC1CVC2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CVC1StatusChange",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CVC1TrackEditErrors",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TravelIndPremService",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PromotionCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FleetCardIdDriverNo",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FleetCardVehicleNo",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount16",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount26",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount36",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount46",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount56",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount66",
+						"type": "nvarchar"
+					},
+					{
+						"name": "VehicleMileage",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ProductGroupId",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "CompanyAID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSFiller",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TypeIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BatchNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ApplicationName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TransactionStatus",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSDiscountAmount",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "AcqTranId",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FedSalesTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StateTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CountyTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CityTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LocalSalesTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Misc1ExciseTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Misc2ExciseTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StateSalesTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CountySalesTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CitySalesTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiscSalesTaxExemptAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TaxExemptTotalBalance",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "AuthMatchedFlag",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EDTransactionFlag",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BillingMethodCT",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DirectBilledAmount",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "FleetFundedAmount",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "LoanNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "InterchangeRateIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "NetworkReferenceNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AcquirerID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "GCMSProcessingDataandCycleNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AdditionalData2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AmountCurrConvAssessment",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PAN",
+						"type": "nvarchar"
+					},
+					{
+						"name": "IssuerICA",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DateLastUpdate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DE_RecordData_TimeLastUpdate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "VIPLimit",
+						"type": "nvarchar"
+					},
+					{
+						"name": "VIPCurrencyCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RecordDataRegionIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CaptureCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TotalUsageCount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TotalUsageAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalUsageCount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalUsageAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalSavingsCount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalSavingAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalDDACount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalDDAAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalCreditCardCount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalCreditCardAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalNASCount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ATMTotalNASAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSUsageTotalCount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSUsageTotalAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardholderPostalCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardholderAddress",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RegionIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PurgeDate122",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MDSPrivateData1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CrossBorderTxnIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CurrencyIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FraudScore",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FraudRiskIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MDSPrivateData2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EncryptedDEsKey",
+						"type": "nvarchar"
+					},
+					{
+						"name": "KeyCheckValue",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CHCertificateSerialNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Password",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DateofBirth",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardValidationCode2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StreetAddress",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CHCityofResidence",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CHStateCountryCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CHPostalCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MothersMaidenName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SocialSecurityNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "NationalId",
+						"type": "nvarchar"
+					},
+					{
+						"name": "HomePhoneNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "WorkPhoneNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PassportNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BirthDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MemberSince",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PhotoCardIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Country",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiscAuth1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiscAuth2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MiscAuth3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "UniversalCHAuthField",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SwitchSerialNum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PartialApprTerminalSprtInd",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PurchaseAmtOnlyTerminalSprtInd",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReservedForFutureUse613",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReservedForFutureUse614",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReservedForFutureUse615",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ImpliedDecimal",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OnBehalfServices",
+						"type": "nvarchar"
+					},
+					{
+						"name": "IssuerChipAuthentication",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ProcessIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ProcessInformation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MCElectronicAcceptanceInd",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TicketNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PhysicalSource",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TxnFeeIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TxnFeeAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettleFeeIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettleFeeAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "AccountType1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount4",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Amount5",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DbtCdtAmtIndSetFee",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DbtCdtAmtIndTxnFee",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SettlementFeeAmount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RuleFlag",
+						"type": "bit"
+					},
+					{
+						"name": "PostDatedTran",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SKU_Number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FileId",
+						"type": "nvarchar"
+					},
+					{
+						"name": "InvoiceNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FeeReversalReason",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MBCMatch",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "ProfileIDatAutoReage",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReageTrigger",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "ConsecutiveQualifiedPayments",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "ConsecutiveDelinquentCycles",
+						"type": "tinyint",
+						"precision": 3
+					},
+					{
+						"name": "FutureUse1_PDS0044",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BusinessDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SecurityProtocol",
+						"type": "nvarchar"
+					},
+					{
+						"name": "gcmsproductidentifier",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MerchantCountry",
+						"type": "nvarchar"
+					},
+					{
+						"name": "McUCAFColInd",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CardIssuerRefData",
+						"type": "nvarchar"
+					},
+					{
+						"name": "POSCardPresenceIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ActionDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ReceivingICANumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "TransacOriginatorInstIDCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MerchantLocPostalCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MerchantStreetAddress",
+						"type": "nvarchar"
+					},
+					{
+						"name": "JulianProSubDate",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MessageReversalIndicator",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MidType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RowCreatedDate",
+						"type": "nvarchar"
+					}
+				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "CCardLookUp"
+					"table": "CCard_secondary"
 				}
 			},
 			"dependsOn": [
@@ -469,7 +1831,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "CCard_Primary",
+						"fileName": "CCard_secondary",
 						"folderPath": "Direct",
 						"container": "contain"
 					},
