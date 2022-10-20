@@ -12,7 +12,7 @@
 				"type": "AzureBlobStorageLocation",
 				"fileName": "CCard_Primary",
 				"folderPath": "Direct",
-				"container": "Container1"
+				"container": "contain"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
