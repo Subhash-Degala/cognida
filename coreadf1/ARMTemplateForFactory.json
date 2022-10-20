@@ -489,7 +489,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "IPMMaster"
+					"table": "CCard_Primary"
 				}
 			},
 			"dependsOn": [
