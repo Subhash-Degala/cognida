@@ -438,7 +438,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "IPMMaster",
+						"fileName": "CCard_Primary",
 						"folderPath": "Direct",
 						"container": "contain"
 					},
