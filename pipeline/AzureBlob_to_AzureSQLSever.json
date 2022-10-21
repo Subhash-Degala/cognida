@@ -1,0 +1,6 @@
+{
+	"name": "AzureBlob_to_AzureSQLSever",
+	"properties": {
+		"annotations": []
+	}
+}
