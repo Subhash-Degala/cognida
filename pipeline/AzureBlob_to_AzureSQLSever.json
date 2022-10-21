@@ -1,6 +1,24 @@
 {
 	"name": "AzureBlob_to_AzureSQLSever",
 	"properties": {
+		"activities": [
+			{
+				"name": "Copy data SQL to BLOB",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"enableStaging": false
+				}
+			}
+		],
 		"annotations": []
 	}
 }
